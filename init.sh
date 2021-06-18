@@ -7,8 +7,6 @@ WORKING_DIR="/var/www/html"
 
 . "$PROJECT_DIR/chevereto"
 
-CHEVERETO_INSTALLER_TAG=${SOFTWARE_INSTALLER_TAG}
-
 . "$PROJECT_DIR/scripts/00-update.sh"
 . "$PROJECT_DIR/scripts/01-fs.sh"
 . "$PROJECT_DIR/scripts/10-php.sh"
@@ -16,6 +14,7 @@ CHEVERETO_INSTALLER_TAG=${SOFTWARE_INSTALLER_TAG}
 . "$PROJECT_DIR/scripts/12-apache.sh"
 . "$PROJECT_DIR/common/scripts/03-force-ssh-logout.sh"
 . "$PROJECT_DIR/common/scripts/90-cleanup.sh"
+. "$PROJECT_DIR/scripts/13-cron.sh"
 . "$PROJECT_DIR/scripts/99-apache-reload.sh"
 
-echo "[OK] Installer $SOFTWARE_INSTALLER_TAG provisioned!"
+echo "[OK] Chevereto Installer $CHEVERETO_INSTALLER_TAG provisioned!"
