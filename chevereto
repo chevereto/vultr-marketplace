@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+SOFTWARE_CHEVERETO="chevereto"
+SOFTWARE_TAG="3.20.5"
+SOFTWARE_INSTALLER_TAG="2.2.3"
