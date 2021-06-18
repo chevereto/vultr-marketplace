@@ -3,7 +3,7 @@
 WORKING_DIR="/var/www/html"
 CHEVERETO_LICENSE=
 rm -rf /var/www/html/*
-mkdir /chevereto && mkdir -p /chevereto/{download,installer}
+mkdir -p /chevereto && mkdir -p /chevereto/{download,installer}
 cd /chevereto/download
 curl -S -o installer.tar.gz -L "https://github.com/chevereto/installer/archive/${CHEVERETO_INSTALLER_TAG}.tar.gz"
 tar -xvzf installer.tar.gz

@@ -48,7 +48,7 @@ socket   = /var/run/mysqld/mysqld.sock
 EOM
 
 sed -e '/Match User root/d' \
-    -e '/.*ForceCommand.*droplet.*/d' \
+    -e '/.*ForceCommand.*server.*/d' \
     -i /etc/ssh/sshd_config
 
 systemctl restart ssh
