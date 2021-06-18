@@ -24,11 +24,14 @@ mysqladmin -u root -h localhost password $MYSQL_ROOT_PASS
 mysql -uroot -p${MYSQL_ROOT_PASS} \
     -e "ALTER USER 'debian-sys-maint'@'localhost' IDENTIFIED BY '$DEBIAN_SYS_MAINT_MYSQL_PASS';"
 
-export CHEVERETO_DB_HOST=$CHEVERETO_DB_HOST
-export CHEVERETO_DB_NAME=$CHEVERETO_DB_NAME
-export CHEVERETO_DB_USER=$CHEVERETO_DB_USER
-export CHEVERETO_DB_PASS=$CHEVERETO_DB_PASS
-export CHEVERETO_DB_PORT=$CHEVERETO_DB_PORT
+set -eux
+{
+    echo "export CHEVERETO_DB_HOST=$CHEVERETO_DB_HOST"
+    echo "export CHEVERETO_DB_NAME=$CHEVERETO_DB_NAME"
+    echo "export CHEVERETO_DB_USER=$CHEVERETO_DB_USER"
+    echo "export CHEVERETO_DB_PASS=$CHEVERETO_DB_PASS"
+    echo "export CHEVERETO_DB_PORT=$CHEVERETO_DB_PORT"
+} >>"/etc/apache2/envvars"
 
 cat >/etc/mysql/debian.cnf <<EOM
 # Automatically generated for Debian scripts. DO NOT TOUCH!
