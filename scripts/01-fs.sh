@@ -8,3 +8,6 @@ chmod +x /etc/update-motd.d/99-one-click
 mkdir -p /var/lib/cloud/scripts/per-instance/
 cp $PROJECT_DIR/files/var/lib/cloud/scripts/per-instance/provision.sh /var/lib/cloud/scripts/per-instance/provision.sh
 chmod +x /var/lib/cloud/scripts/per-instance/provision.sh
+
+cp $PROJECT_DIR/files/etc/cron.d/chevereto /etc/cron.d/chevereto
+chmod +x /etc/cron.d/chevereto
