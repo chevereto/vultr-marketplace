@@ -2,14 +2,14 @@
 
 echo $(date -u) ": System provisioning started." >>/var/log/per-instance.log
 
-MYSQL_ROOT_PASS=$(openssl rand -hex 24)
-DEBIAN_SYS_MAINT_MYSQL_PASS=$(openssl rand -hex 24)
+MYSQL_ROOT_PASS=$(openssl rand -hex 16)
+DEBIAN_SYS_MAINT_MYSQL_PASS=$(openssl rand -hex 16)
 
 CHEVERETO_DB_HOST=localhost
 CHEVERETO_DB_PORT=3306
 CHEVERETO_DB_NAME=chevereto
 CHEVERETO_DB_USER=chevereto
-CHEVERETO_DB_PASS=$(openssl rand -hex 24)
+CHEVERETO_DB_PASS=$(openssl rand -hex 16)
 
 cat >/root/.mysql_password <<EOM
 MYSQL_ROOT_PASS="${MYSQL_ROOT_PASS}"
