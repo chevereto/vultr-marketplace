@@ -10,4 +10,3 @@ cp $PROJECT_DIR/files/var/lib/cloud/scripts/per-instance/provision.sh /var/lib/c
 chmod +x /var/lib/cloud/scripts/per-instance/provision.sh
 
 cp $PROJECT_DIR/files/etc/cron.d/chevereto /etc/cron.d/chevereto
-chmod +x /etc/cron.d/chevereto
