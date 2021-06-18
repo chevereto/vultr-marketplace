@@ -11,6 +11,7 @@
 This repository provides the Chevereto [Vultr Marketplace](https://www.vultr.com/marketplace/apps/chevereto?ref=8880328-6G) application.
 
 ```sh
-chmod +x init.sh
-sudo ./init.sh
+git clone https://github.com/chevereto/vultr-marketplace
+cd vultr-marketplace/
+chmod +x ./init.sh && ./init.sh
 ```
