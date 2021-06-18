@@ -7,4 +7,3 @@ curl -S -o installer.tar.gz -L "https://github.com/chevereto/installer/archive/$
 tar -xvzf installer.tar.gz
 mv -v installer-"${CHEVERETO_INSTALLER_TAG}"/installer.php "${WORKING_DIR}"/installer.php
 cd $WORKING_DIR
-chown www-data: $WORKING_DIR -R
