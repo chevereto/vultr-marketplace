@@ -4,11 +4,12 @@ set -e
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 WORKING_DIR="/var/www/html"
+
 . "$PROJECT_DIR/chevereto"
+
 CHEVERETO_SOFTWARE=${SOFTWARE_CHEVERETO}
 CHEVERETO_TAG=${SOFTWARE_TAG}
 CHEVERETO_INSTALLER_TAG=${SOFTWARE_INSTALLER_TAG}
-CHEVERETO_LICENSE=
 
 . "$PROJECT_DIR/scripts/00-update.sh"
 . "$PROJECT_DIR/scripts/01-fs.sh"
@@ -19,4 +20,4 @@ CHEVERETO_LICENSE=
 . "$PROJECT_DIR/common/scripts/90-cleanup.sh"
 . "$PROJECT_DIR/scripts/99-apache-reload.sh"
 
-echo "[OK] Installer $SOFTWARE_INSTALLER_TAG provisioned"
+echo "[OK] Installer $SOFTWARE_INSTALLER_TAG provisioned!"

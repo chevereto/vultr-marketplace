@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-WORKING_DIR="/var/www/html"
-CHEVERETO_LICENSE=
-rm -rf /var/www/html/*
+rm -rf "${WORKING_DIR}"/*
 mkdir -p /chevereto && mkdir -p /chevereto/{download,installer}
 cd /chevereto/download
 curl -S -o installer.tar.gz -L "https://github.com/chevereto/installer/archive/${CHEVERETO_INSTALLER_TAG}.tar.gz"
