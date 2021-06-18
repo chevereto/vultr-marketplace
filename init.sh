@@ -17,6 +17,7 @@ source scripts/10-php.sh
 source scripts/11-installer.sh
 source scripts/12-apache.sh
 source common/scripts/03-force-ssh-logout.sh
+source common/scripts/90-cleanup.sh
 source scripts/99-apache-reload.sh
 
 echo "[OK] Installer $SOFTWARE_INSTALLER_TAG provisioned"

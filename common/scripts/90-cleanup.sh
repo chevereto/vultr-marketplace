@@ -14,10 +14,15 @@ if [[ ! -d /tmp ]]; then
 fi
 chmod 1777 /tmp
 
-apt-get -y update
-apt-get -y upgrade
-apt-get -y autoremove
-apt-get -y autoclean
+if [ -n "$(command -v yum)" ]; then
+    yum update -y
+    yum clean all
+elif [ -n "$(command -v apt-get)" ]; then
+    apt-get -y update
+    apt-get -y upgrade
+    apt-get -y autoremove
+    apt-get -y autoclean
+fi
 
 rm -rf /tmp/* /var/tmp/*
 history -c
