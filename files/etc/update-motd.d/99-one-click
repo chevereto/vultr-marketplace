@@ -27,8 +27,8 @@ On the server:
    > certbot --apache -d example.com -d www.example.com
 
 IMPORTANT:
- * After connecting to the server for the first time, immediately add the
-   Chevereto administrator at http://$myip
+ * After connecting to the server for the first time, immediately install
+   Chevereto at http://$myip/installer.php
  * Secure your database by running:
    > mysql_secure_installation
 

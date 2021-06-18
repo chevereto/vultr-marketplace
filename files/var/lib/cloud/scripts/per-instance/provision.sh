@@ -33,6 +33,8 @@ set -eux
     echo "export CHEVERETO_DB_PORT=$CHEVERETO_DB_PORT"
 } >>"/etc/apache2/envvars"
 
+systemctl restart apache2
+
 cat >/etc/mysql/debian.cnf <<EOM
 # Automatically generated for Debian scripts. DO NOT TOUCH!
 [client]
