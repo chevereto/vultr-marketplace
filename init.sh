@@ -15,6 +15,5 @@ WORKING_DIR="/var/www/html"
 . "$PROJECT_DIR/common/scripts/14-ufw-apache.sh"
 . "$PROJECT_DIR/common/scripts/03-force-ssh-logout.sh"
 . "$PROJECT_DIR/common/scripts/90-cleanup.sh"
-. "$PROJECT_DIR/scripts/99-apache-reload.sh"
 
 echo "[OK] Chevereto Installer $CHEVERETO_INSTALLER_TAG provisioned!"
