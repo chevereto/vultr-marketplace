@@ -1,6 +1,7 @@
 **In addition to the package installation, this one-click deploy also**
 
 - Enables the UFW firewall to allow only SSH (port 22, rate limited), HTTP (port 80), and HTTPS (port 443) access.
+- Sets up the Chevereto database and its user.
 - Sets the MySQL root password.
 - Sets up the debian-sys-maint user in MySQL so the system’s init scripts for MySQL will work without requiring the MySQL root user password.
 - Sets the cron required for background tasks.
@@ -11,7 +12,7 @@ Chevereto installer will be available at this URL:
 
 [http://{{ip}}/installer.php](http://{{ip}}/installer.php)
 
-After you finish the installation, your Chevereto website will be accessible at:
+Database details will be automatically detected. You just need to review and confirm the details of your Chevereto installation. After you finish the installation, your Chevereto website will be accessible at:
 
 [http://{{ip}}/](http://{{ip}}/)
 
