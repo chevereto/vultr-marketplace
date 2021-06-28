@@ -2,6 +2,7 @@
 
 echo $(date -u) ": System provisioning started." >>/var/log/per-instance.log
 
+WORKING_DIR="/var/www/html"
 MYSQL_ROOT_PASS=$(openssl rand -hex 16)
 DEBIAN_SYS_MAINT_MYSQL_PASS=$(openssl rand -hex 16)
 
@@ -24,14 +25,13 @@ mysqladmin -u root -h localhost password $MYSQL_ROOT_PASS
 mysql -uroot -p${MYSQL_ROOT_PASS} \
     -e "ALTER USER 'debian-sys-maint'@'localhost' IDENTIFIED BY '$DEBIAN_SYS_MAINT_MYSQL_PASS';"
 
-set -eux
-{
-    echo "export CHEVERETO_DB_HOST=$CHEVERETO_DB_HOST"
-    echo "export CHEVERETO_DB_NAME=$CHEVERETO_DB_NAME"
-    echo "export CHEVERETO_DB_USER=$CHEVERETO_DB_USER"
-    echo "export CHEVERETO_DB_PASS=$CHEVERETO_DB_PASS"
-    echo "export CHEVERETO_DB_PORT=$CHEVERETO_DB_PORT"
-} >>"/etc/apache2/envvars"
+cat >>/etc/apache2/envvars <<EOM
+export CHEVERETO_DB_HOST=${CHEVERETO_DB_HOST}
+export CHEVERETO_DB_NAME=${CHEVERETO_DB_NAME}
+export CHEVERETO_DB_USER=${CHEVERETO_DB_USER}
+export CHEVERETO_DB_PASS=${CHEVERETO_DB_PASS}
+export CHEVERETO_DB_PORT=${CHEVERETO_DB_PORT}
+EOM
 
 systemctl restart apache2
 
@@ -50,9 +50,11 @@ socket   = /var/run/mysqld/mysqld.sock
 EOM
 
 sed -e '/Match User root/d' \
-    -e '/.*ForceCommand.*server.*/d' \
+    -e '/.*ForceCommand.*Chevereto.*/d' \
     -i /etc/ssh/sshd_config
 
 systemctl restart ssh
+
+rm -rf "${WORKING_DIR}"/installer.lock
 
 echo $(date -u) ": System provisioning script is complete." >>/var/log/per-instance.log

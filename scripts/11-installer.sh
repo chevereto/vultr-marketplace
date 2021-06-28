@@ -6,4 +6,5 @@ cd /chevereto/download
 curl -S -o installer.tar.gz -L "https://github.com/chevereto/installer/archive/${CHEVERETO_INSTALLER_TAG}.tar.gz"
 tar -xvzf installer.tar.gz
 mv -v installer-"${CHEVERETO_INSTALLER_TAG}"/installer.php "${WORKING_DIR}"/installer.php
+touch "${WORKING_DIR}"/installer.lock
 cd $WORKING_DIR
