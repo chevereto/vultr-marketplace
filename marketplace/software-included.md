@@ -1,7 +1,7 @@
 chevereto-installer
 https://github.com/chevereto/installer
-2.2.3
-https://github.com/chevereto/installer/releases/tag/2.2.3
+3.0.0
+https://github.com/chevereto/installer/releases/tag/3.0.0
 MIT
 https://github.com/chevereto/installer/blob/master/LICENSE
 
