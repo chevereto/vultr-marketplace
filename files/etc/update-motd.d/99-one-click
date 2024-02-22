@@ -14,7 +14,7 @@ To keep this server secure, the UFW firewall is enabled.
 All ports are BLOCKED except 22 (SSH), 80 (HTTP), and 443 (HTTPS).
 
 In a web browser, you can view:
- * The Chevereto installer: http://$myip/installer.php
+ * The Chevereto website: http://$myip
 
 On the server:
  * The default web root is located at /var/www/html
@@ -24,7 +24,7 @@ On the server:
 
 IMPORTANT:
  * After connecting to the server for the first time, immediately install
-   Chevereto at http://$myip/installer.php
+   Chevereto at http://$myip
  * Secure your database by running:
    > mysql_secure_installation
  * Setup email delivery at http://$myip/dashboard/settings/email

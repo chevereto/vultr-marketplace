@@ -1,13 +1,13 @@
-chevereto-installer
-https://github.com/chevereto/installer
-3.0.0
-https://github.com/chevereto/installer/releases/tag/3.0.0
-MIT
-https://github.com/chevereto/installer/blob/master/LICENSE
+Chevereto
+https://github.com/chevereto/chevereto
+4.0
+https://github.com/chevereto/chevereto/releases/latest
+AGPL-3.0
+https://github.com/chevereto/chevereto/blob/4.0/LICENSE
 
 PHP
 https://php.net/
-7.4
+8.2
 https://www.php.net/downloads
 PHP v3.01
 http://www.php.net/license/3_01.txt

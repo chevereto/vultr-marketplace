@@ -55,6 +55,4 @@ sed -e '/Match User root/d' \
 
 systemctl restart ssh
 
-rm -rf "${WORKING_DIR}"/installer.lock
-
 echo $(date -u) ": System provisioning script is complete." >>/var/log/per-instance.log

@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
 rm -rf "${WORKING_DIR}"/*
-mkdir -p /chevereto && mkdir -p /chevereto/download
-cd /chevereto/download
-curl -S -o installer.php -L "https://github.com/chevereto/installer/releases/download/${CHEVERETO_INSTALLER_TAG}/installer.php"
-mv -v installer.php "${WORKING_DIR}"/installer.php
-touch "${WORKING_DIR}"/installer.lock
+rm -rf .temp && mkdir .temp && cd .temp
+echo "[INFO] Downloading chevereto/chevereto $CHEVERETO_LABEL..."
+curl -f -SOJL "${CHEVERETO_API_DOWNLOAD}${CHEVERETO_PACKAGE}"
+unzip -oq *.zip -d $WORKING_DIR
+cd -
+rm -rf .temp
+if id "www-data" &>/dev/null; then
+    chown -R www-data: $WORKING_DIR
+else
+    echo '[NOTICE] www-data user not found, skipping ownership change'
+fi
+echo "[OK] $CHEVERETO_LABEL files provisioned"
 cd $WORKING_DIR
