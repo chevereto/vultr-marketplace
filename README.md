@@ -8,6 +8,8 @@
 
 This repository provides the Chevereto [Vultr Marketplace](https://www.vultr.com/marketplace/apps/chevereto?ref=8880328-6G) application.
 
+`Ubuntu 22.04 LTS`
+
 ```sh
 git clone -b 4.0 https://github.com/chevereto/vultr-marketplace
 cd vultr-marketplace/
