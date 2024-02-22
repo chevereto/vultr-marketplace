@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# With additions from Vultr docs.
+
 # DigitalOcean Marketplace Image Validation Tool
 # © 2021 DigitalOcean LLC.
 # This code is licensed under Apache 2.0 license (see LICENSE.md for details)
@@ -29,6 +31,9 @@ rm -rf /tmp/* /var/tmp/*
 history -c
 cat /dev/null >/root/.bash_history
 unset HISTFILE
+rm -f /var/lib/systemd/random-seed
+rm -f /etc/machine-id
+touch /etc/machine-id
 find /var/log -mtime -1 -type f -exec truncate -s 0 {} \;
 rm -rf /var/log/*.gz /var/log/*.log /var/log/*.[0-9] /var/log/*-????????
 rm -rf /var/lib/cloud/instances/*
@@ -47,3 +52,4 @@ The secure erase will complete successfully when you see:${NC}
 Beginning secure erase now\n"
 
 dd if=/dev/zero of=/zerofile bs=4096 || rm /zerofile
+fstrim /

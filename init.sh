@@ -12,5 +12,5 @@ WORKING_DIR="/var/www/html"
 . "$PROJECT_DIR/scripts/12-apache.sh"
 . "$PROJECT_DIR/common/scripts/14-ufw-apache.sh"
 . "$PROJECT_DIR/common/scripts/03-force-ssh-logout.sh"
-. "$PROJECT_DIR/common/scripts/90-cleanup.sh"
+. "$PROJECT_DIR/common/scripts/90-cleanup.sh" # for snapshots
 echo "[OK] Chevereto v$CHEVERETO_TAG ready"
