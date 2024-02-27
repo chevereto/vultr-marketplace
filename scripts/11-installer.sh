@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
+set -o errexit
+
+CHEVERETO_API_DOWNLOAD="https://chevereto.com/api/download/"
+CHEVERETO_LABEL="Chevereto v$CHEVERETO_TAG"
 rm -rf "${WORKING_DIR}"/*
 rm -rf .temp && mkdir .temp && cd .temp
 echo "[INFO] Downloading chevereto/chevereto $CHEVERETO_LABEL..."
-curl -f -SOJL "${CHEVERETO_API_DOWNLOAD}${CHEVERETO_PACKAGE}"
+curl -f -SOJL "${CHEVERETO_API_DOWNLOAD}${CHEVERETO_TAG}"
 unzip -oq *.zip -d $WORKING_DIR
 cd -
 rm -rf .temp
