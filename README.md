@@ -6,7 +6,7 @@
 
 [![Community](https://img.shields.io/badge/chv.to-community-blue?style=flat-square)](https://chv.to/community)
 
-This repository provides the Chevereto [Vultr Marketplace](https://www.vultr.com/marketplace/apps/chevereto?ref=8880327) application.
+This repository provides the Chevereto [Vultr Marketplace](https://chv.to/vultr) application.
 
 ## Install Packer
 
